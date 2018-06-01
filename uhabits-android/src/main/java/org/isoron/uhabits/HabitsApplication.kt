@@ -28,6 +28,9 @@ import org.isoron.uhabits.core.ui.*
 import org.isoron.uhabits.utils.*
 import org.isoron.uhabits.widgets.*
 import java.io.*
+import android.support.multidex.MultiDex
+import android.support.multidex.MultiDexApplication
+
 
 /**
  * The Android application for Loop Habit Tracker.
@@ -38,6 +41,11 @@ class HabitsApplication : Application() {
     private lateinit var widgetUpdater: WidgetUpdater
     private lateinit var reminderScheduler: ReminderScheduler
     private lateinit var notificationTray: NotificationTray
+
+    override fun attachBaseContext(base: Context) {
+        super.attachBaseContext(base)
+        MultiDex.install(this)
+    }
 
     override fun onCreate() {
         super.onCreate()

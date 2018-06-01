@@ -19,9 +19,13 @@
 
 package org.isoron.uhabits.activities.habits.list
 
+import android.content.Context
 import android.view.*
+import android.widget.Toast
+import com.firebase.ui.auth.AuthUI
 import org.isoron.androidbase.activities.*
 import org.isoron.uhabits.*
+import org.isoron.uhabits.activities.login.LoginActivity
 import org.isoron.uhabits.core.preferences.*
 import org.isoron.uhabits.core.ui.*
 import org.isoron.uhabits.core.ui.screens.habits.list.*
@@ -63,6 +67,11 @@ class ListHabitsMenu @Inject constructor(
 
             R.id.actionAbout -> {
                 behavior.onViewAbout()
+                return true
+            }
+
+            R.id.actionLogout -> {
+                LoginActivity().logout()
                 return true
             }
 

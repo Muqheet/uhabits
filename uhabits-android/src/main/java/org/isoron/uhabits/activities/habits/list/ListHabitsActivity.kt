@@ -67,4 +67,9 @@ class ListHabitsActivity : HabitsActivity() {
 
         super.onResume()
     }
+
+    override fun onBackPressed() {
+//        super.onBackPressed()
+        finish()
+    }
 }

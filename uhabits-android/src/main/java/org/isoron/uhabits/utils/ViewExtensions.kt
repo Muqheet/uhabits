@@ -75,7 +75,7 @@ fun View.showMessage(@StringRes stringId: Int) {
     try {
         val snackbar = Snackbar.make(this, stringId, Snackbar.LENGTH_SHORT)
         val tvId = android.support.design.R.id.snackbar_text
-        val tv = snackbar.view.findViewById(tvId)
+        val tv = snackbar.view.findViewById<TextView>(tvId)
         if(tv is TextView) tv.setTextColor(Color.WHITE)
         snackbar.show()
     } catch (e: IllegalArgumentException) {
